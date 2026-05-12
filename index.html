@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>$PIPI · Pink Pepe's Girlfriend</title>
+<meta name="description" content="Pink Pepe's Girlfriend. A sweet, loud, lipstick-coded meme coin for the pink side of the timeline." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://ddd-one-pearl.vercel.app/" />
+<meta property="og:title" content="$PIPI · Pink Pepe's Girlfriend" />
+<meta property="og:description" content="Pink Pepe's Girlfriend. Cute, pink, and dangerously online." />
+<meta property="og:image" content="https://ddd-one-pearl.vercel.app/assets/pipi-hero.png" />
+<meta property="og:image:width" content="1536" />
+<meta property="og:image:height" content="1024" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="$PIPI · Pink Pepe's Girlfriend" />
+<meta name="twitter:description" content="Cute, pink, and dangerously online." />
+<meta name="twitter:image" content="https://ddd-one-pearl.vercel.app/assets/pipi-hero.png" />
+<meta name="theme-color" content="#FF4FB3" />
+<link rel="icon" href="./assets/pipi-portrait.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Space+Grotesk:wght@400;500;600;700&family=VT323&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --yellow: #FF4FB3;
+    --yellow-deep: #E73497;
+    --yellow-soft: #FF8FD2;
+    --blue: #3155FF;
+    --blue-deep: #1F2DAE;
+    --blue-ink: #161044;
+    --orange: #FFE14F;
+    --orange-soft: #FFB7DE;
+    --ink: #0A0B20;
+    --paper: #FFD7EC;
+
+    --f-display: "Bowlby One", system-ui, sans-serif;
+    --f-body: "Space Grotesk", system-ui, sans-serif;
+    --f-mono: "VT323", ui-monospace, monospace;
+
+    --r-lg: 28px;
+    --r-md: 18px;
+    --r-sm: 10px;
+
+    --step--1: clamp(0.85rem, 0.78rem + 0.3vw, 1rem);
+    --step-0: clamp(1rem, 0.92rem + 0.4vw, 1.18rem);
+    --step-1: clamp(1.2rem, 1rem + 1vw, 1.6rem);
+    --step-2: clamp(1.5rem, 1.1rem + 2vw, 2.4rem);
+    --step-3: clamp(2.2rem, 1.4rem + 4vw, 4rem);
+    --step-4: clamp(3rem, 1.5rem + 8vw, 7rem);
+    --step-5: clamp(4rem, 2rem + 12vw, 11rem);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--f-body);
+    font-size: var(--step-0);
+    color: var(--ink);
+    background: var(--yellow);
+    overflow-x: hidden;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 100;
+    background-image:
+      radial-gradient(rgba(10,11,32,.09) 1px, transparent 1px);
+    background-size: 3px 3px;
+    mix-blend-mode: multiply;
+    opacity: .35;
+  }
+
+  img { max-width: 100%; display: block; }
+  a { color: inherit; text-decoration: none; }
+  button { font: inherit; cursor: pointer; }
+
+  .wrap {
+    width: min(1200px, 92vw);
+    margin-inline: auto;
+  }
+
+  /* ============ NAV ============ */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--yellow);
+    border-bottom: 2px solid var(--ink);
+  }
+  .nav__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 0;
+    gap: 16px;
+  }
+  .nav__brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--f-display);
+    font-size: 1.1rem;
+    letter-spacing: .02em;
+  }
+  .nav__brand img {
+    width: 36px;
+    height: 36px;
+    border: 2px solid var(--ink);
+    border-radius: 50%;
+    background: var(--yellow-soft);
+  }
+  .nav__links {
+    display: flex;
+    gap: clamp(10px, 2vw, 28px);
+    font-weight: 600;
+    font-size: .95rem;
+  }
+  .nav__links a {
+    padding: 6px 2px;
+    border-bottom: 2px solid transparent;
+    transition: border-color .2s;
+  }
+  .nav__links a:hover { border-color: var(--ink); }
+  .nav__actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .nav__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    background: var(--blue);
+    color: var(--yellow);
+    border: 2px solid var(--ink);
+    border-radius: 999px;
+    font-family: var(--f-display);
+    font-size: .85rem;
+    letter-spacing: .06em;
+    box-shadow: 3px 3px 0 var(--ink);
+    transition: transform .15s, box-shadow .15s;
+  }
+  .nav__cta:hover { transform: translate(-1px, -1px); box-shadow: 4px 4px 0 var(--ink); }
+  .nav__cta:active { transform: translate(2px, 2px); box-shadow: 0 0 0 var(--ink); }
+  .nav__cta--ghost {
+    background: var(--yellow-soft);
+    color: var(--ink);
+  }
+  .nav__cta--ghost svg { display: block; }
+  @media (max-width: 520px) {
+    .nav__cta--ghost span { display: none; }
+    .nav__cta--ghost { padding: 10px 12px; }
+    .nav__actions { gap: 8px; }
+    .nav__cta { padding: 10px 12px; }
+    .nav__actions .nav__cta:not(.nav__cta--ghost) { display: none; }
+  }
+
+  @media (max-width: 640px) {
+    .nav__links { display: none; }
+  }
+
+  /* ============ HERO ============ */
+  .hero {
+    position: relative;
+    padding: clamp(30px, 6vw, 80px) 0 clamp(40px, 6vw, 80px);
+    overflow: hidden;
+    min-height: calc(100svh - 68px);
+    display: flex;
+    align-items: center;
+    background: var(--pink);
+  }
+  .hero__inner {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 660px;
+    margin-left: clamp(20px, 5vw, 96px);
+    margin-right: auto;
+    padding-right: 16px;
+  }
+  @media (max-width: 820px) {
+    .hero { min-height: calc(100svh - 64px); align-items: flex-start; padding-top: clamp(24px, 6vw, 60px); }
+    .hero__inner {
+      width: calc(100% - clamp(32px, 10vw, 64px));
+      text-align: left;
+      max-width: none;
+      margin-left: clamp(16px, 5vw, 32px);
+      margin-right: clamp(16px, 5vw, 32px);
+      padding-right: 0;
+    }
+  }
+
+  .hero__kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 14px;
+    background: var(--ink);
+    color: var(--yellow);
+    border-radius: 999px;
+    font-family: var(--f-display);
+    font-size: .78rem;
+    letter-spacing: .12em;
+  }
+  .hero__kicker::before {
+    content: "";
+    width: 8px; height: 8px;
+    background: var(--orange);
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px rgba(232,90,16,.3);
+    animation: pulse 1.8s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 3px rgba(232,90,16,.3); }
+    50% { box-shadow: 0 0 0 8px rgba(232,90,16,0); }
+  }
+
+  .hero__title {
+    font-family: var(--f-display);
+    font-size: var(--step-5);
+    line-height: .88;
+    letter-spacing: -0.02em;
+    color: var(--blue-ink);
+    margin-top: 18px;
+    text-shadow:
+      6px 6px 0 var(--orange),
+      12px 12px 0 var(--ink);
+  }
+  @media (max-width: 820px) {
+    .hero__title { text-shadow: 4px 4px 0 var(--orange), 8px 8px 0 var(--ink); }
+  }
+  .hero__tagline {
+    margin-top: 30px;
+    font-size: var(--step-1);
+    font-weight: 500;
+    max-width: 30ch;
+  }
+  @media (max-width: 820px) { .hero__tagline { margin-inline: 0; max-width: 24ch; } }
+
+  .hero__meta {
+    margin-top: 22px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  @media (max-width: 820px) { .hero__meta { justify-content: flex-start; } }
+  .hero__meta span {
+    padding: 6px 12px;
+    border: 2px solid var(--ink);
+    border-radius: 999px;
+    background: var(--yellow-soft);
+    font-size: .85rem;
+    font-weight: 600;
+  }
+
+  .hero__cta {
+    margin-top: 34px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+  @media (max-width: 820px) { .hero__cta { justify-content: flex-start; } }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 26px;
+    border-radius: 999px;
+    border: 2.5px solid var(--ink);
+    font-family: var(--f-display);
+    font-size: .95rem;
+    letter-spacing: .05em;
+    box-shadow: 5px 5px 0 var(--ink);
+    transition: transform .15s, box-shadow .15s;
+  }
+  .btn:hover { transform: translate(-2px, -2px); box-shadow: 7px 7px 0 var(--ink); }
+  .btn:active { transform: translate(3px, 3px); box-shadow: 1px 1px 0 var(--ink); }
+  .btn--primary { background: var(--blue); color: var(--yellow); }
+  .btn--ghost { background: var(--yellow-soft); color: var(--ink); }
+
+  .hero__watcher {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+  }
+  .hero__watcher img {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    max-width: none;
+    object-fit: cover;
+    object-position: center center;
+    animation: watcherBreathe 5.8s ease-in-out infinite;
+  }
+  @keyframes watcherBreathe {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.015); }
+  }
+  @media (max-width: 820px) {
+    .hero__watcher { opacity: 1; }
+    .hero__watcher img { object-position: 36% center; }
+  }
+
+  /* ============ MARQUEE ============ */
+  .marquee {
+    background: var(--ink);
+    color: var(--yellow);
+    border-top: 3px solid var(--ink);
+    border-bottom: 3px solid var(--ink);
+    overflow: hidden;
+    padding: 18px 0;
+  }
+  .marquee__track {
+    display: flex;
+    gap: 36px;
+    white-space: nowrap;
+    animation: slide 28s linear infinite;
+    font-family: var(--f-display);
+    font-size: clamp(1.1rem, 1.5vw, 1.4rem);
+    letter-spacing: .06em;
+  }
+  .marquee__track span {
+    display: inline-flex;
+    align-items: center;
+    gap: 36px;
+  }
+  .marquee__track span::after {
+    content: "✦";
+    color: var(--orange);
+  }
+  @keyframes slide {
+    to { transform: translateX(-50%); }
+  }
+
+  /* ============ PAINTING SECTION ============ */
+  .painting {
+    padding: clamp(60px, 10vw, 140px) 0;
+    background:
+      radial-gradient(ellipse at top, rgba(49,85,255,.14), transparent 60%),
+      var(--yellow);
+    position: relative;
+  }
+  .painting__head {
+    max-width: 860px;
+    margin-bottom: clamp(30px, 5vw, 60px);
+  }
+  .section-kicker {
+    display: inline-block;
+    padding: 6px 14px;
+    background: var(--ink);
+    color: var(--yellow);
+    border-radius: 999px;
+    font-family: var(--f-display);
+    font-size: .76rem;
+    letter-spacing: .14em;
+    margin-bottom: 22px;
+  }
+  .section-title {
+    font-family: var(--f-display);
+    font-size: var(--step-4);
+    line-height: .95;
+    letter-spacing: -0.02em;
+    color: var(--blue-ink);
+  }
+  .section-title em {
+    font-style: normal;
+    color: var(--orange);
+  }
+
+  .painting__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(20px, 3vw, 36px);
+  }
+  @media (max-width: 760px) {
+    .painting__grid { grid-template-columns: 1fr; }
+  }
+
+  .card {
+    background: var(--paper);
+    border: 3px solid var(--ink);
+    border-radius: var(--r-lg);
+    padding: 18px;
+    box-shadow: 10px 10px 0 var(--ink);
+    transition: transform .4s cubic-bezier(.2,.8,.2,1);
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  .card.in { transform: translateY(0); opacity: 1; }
+  .card__frame {
+    aspect-ratio: 4 / 5;
+    background: var(--yellow);
+    border: 2px solid var(--ink);
+    border-radius: var(--r-md);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .card__frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .card__caption {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    padding: 16px 6px 4px;
+    font-size: .92rem;
+  }
+  .card__caption strong {
+    font-family: var(--f-display);
+    font-weight: 400;
+    font-size: 1rem;
+  }
+  .card__caption em {
+    font-style: italic;
+    opacity: .7;
+  }
+
+  .painting__copy {
+    margin-top: clamp(40px, 6vw, 80px);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(24px, 4vw, 60px);
+    align-items: start;
+  }
+  @media (max-width: 760px) {
+    .painting__copy { grid-template-columns: 1fr; }
+  }
+  .painting__copy h2 {
+    font-family: var(--f-display);
+    font-size: var(--step-3);
+    line-height: .95;
+    letter-spacing: -0.01em;
+    color: var(--blue-ink);
+  }
+  .painting__copy p {
+    font-size: var(--step-0);
+    max-width: 52ch;
+  }
+  .painting__copy p + p { margin-top: 14px; }
+
+  .ref-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 22px;
+    padding: 12px 18px;
+    background: var(--blue);
+    color: var(--yellow);
+    border: 2px solid var(--ink);
+    border-radius: 999px;
+    font-family: var(--f-display);
+    font-size: .84rem;
+    letter-spacing: .05em;
+    box-shadow: 4px 4px 0 var(--ink);
+    transition: transform .15s, box-shadow .15s;
+  }
+  .ref-link:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--ink); }
+
+  /* ============ LORE ============ */
+  .lore {
+    padding: clamp(60px, 10vw, 140px) 0;
+    background: var(--blue);
+    color: var(--yellow);
+    border-top: 3px solid var(--ink);
+    border-bottom: 3px solid var(--ink);
+    position: relative;
+    overflow: hidden;
+  }
+  .lore::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 80% 30%, rgba(255,225,79,.22), transparent 55%);
+    pointer-events: none;
+  }
+  .lore .section-kicker { background: var(--yellow); color: var(--ink); }
+  .lore .section-title { color: var(--yellow); }
+  .lore .section-title em { color: var(--orange-soft); }
+
+  .lore__grid {
+    margin-top: clamp(30px, 5vw, 60px);
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: clamp(30px, 5vw, 80px);
+    align-items: start;
+  }
+  @media (max-width: 860px) {
+    .lore__grid { grid-template-columns: 1fr; }
+  }
+  .lore__text p {
+    font-size: var(--step-1);
+    line-height: 1.45;
+    font-weight: 500;
+  }
+  .lore__text p + p { margin-top: 22px; }
+  .lore__text p:last-child {
+    font-family: var(--f-display);
+    font-size: var(--step-1);
+    line-height: 1.1;
+    color: var(--orange-soft);
+  }
+
+  .lore__aside {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    border: 3px solid var(--yellow);
+    border-radius: var(--r-lg);
+    overflow: hidden;
+    background: var(--yellow);
+    box-shadow: 10px 10px 0 rgba(10,11,32,.6);
+  }
+  .lore__aside img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .lore__aside::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 30% 40%, transparent 55%, rgba(10,15,60,.18));
+    pointer-events: none;
+  }
+
+  /* ============ GALLERY MOMENT ============ */
+  .gallery {
+    background: var(--yellow);
+    border-top: 3px solid var(--ink);
+    border-bottom: 3px solid var(--ink);
+    overflow: hidden;
+  }
+  .gallery__inner {
+    margin: 0;
+    position: relative;
+  }
+  .gallery img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 1.2s cubic-bezier(.2,.8,.2,1), opacity 1.2s ease;
+    transform: scale(1.04);
+    opacity: 0;
+  }
+  .gallery.in img {
+    transform: scale(1);
+    opacity: 1;
+  }
+  .gallery__caption {
+    padding: clamp(26px, 3.4vw, 50px) 20px clamp(22px, 3vw, 40px);
+    text-align: center;
+  }
+  .gallery__line {
+    display: block;
+    font-family: var(--f-display);
+    font-size: clamp(1.2rem, 2.2vw, 2rem);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    color: var(--blue-ink);
+  }
+  .gallery__label {
+    display: block;
+    margin-top: 12px;
+    font-size: .82rem;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--ink);
+    opacity: .55;
+  }
+
+  /* ============ BLESSING RIBBON ============ */
+  .blessing {
+    padding: 50px 0;
+    background: var(--yellow-soft);
+    border-bottom: 3px solid var(--ink);
+    text-align: center;
+  }
+  .blessing__inner {
+    max-width: 720px;
+    margin-inline: auto;
+  }
+  .blessing__quote {
+    font-family: var(--f-display);
+    font-size: var(--step-2);
+    line-height: 1.05;
+    color: var(--blue-ink);
+  }
+  .blessing__byline {
+    margin-top: 12px;
+    font-size: .95rem;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+  }
+
+  /* ============ HOW TO BUY ============ */
+  .buy {
+    padding: clamp(60px, 10vw, 140px) 0;
+    background:
+      repeating-linear-gradient(45deg, rgba(10,11,32,.04) 0 2px, transparent 2px 14px),
+      var(--yellow);
+  }
+  .buy__head { max-width: 860px; margin-bottom: clamp(30px, 5vw, 60px); }
+
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: clamp(14px, 2vw, 22px);
+    list-style: none;
+  }
+  @media (max-width: 860px) { .steps { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 500px) { .steps { grid-template-columns: 1fr; } }
+
+  .steps li {
+    background: var(--paper);
+    border: 2.5px solid var(--ink);
+    border-radius: var(--r-md);
+    padding: 24px 20px;
+    box-shadow: 6px 6px 0 var(--ink);
+    position: relative;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .steps__num {
+    font-family: var(--f-display);
+    font-size: 3rem;
+    color: var(--orange);
+    line-height: 1;
+    -webkit-text-stroke: 2px var(--ink);
+  }
+  .steps__title {
+    margin-top: 14px;
+    font-family: var(--f-display);
+    font-size: 1.1rem;
+    color: var(--blue-ink);
+  }
+  .steps__text {
+    margin-top: 8px;
+    font-size: .92rem;
+    color: var(--ink);
+  }
+
+  .ca {
+    margin-top: clamp(34px, 5vw, 50px);
+    background: var(--ink);
+    color: var(--yellow);
+    border: 3px solid var(--ink);
+    border-radius: var(--r-lg);
+    padding: 22px 26px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 18px;
+    box-shadow: 8px 8px 0 var(--orange);
+  }
+  .ca__label {
+    font-family: var(--f-display);
+    font-size: .9rem;
+    letter-spacing: .08em;
+    color: var(--orange-soft);
+  }
+  .ca__value {
+    font-family: var(--f-mono);
+    font-size: clamp(1rem, 2vw, 1.4rem);
+    flex: 1;
+    min-width: 220px;
+    letter-spacing: .02em;
+    word-break: break-all;
+  }
+  .ca__copy {
+    background: var(--yellow);
+    color: var(--ink);
+    border: 2px solid var(--yellow);
+    padding: 10px 18px;
+    border-radius: 999px;
+    font-family: var(--f-display);
+    font-size: .85rem;
+    letter-spacing: .05em;
+    transition: background .15s;
+  }
+  .ca__copy:hover { background: var(--orange-soft); }
+  .ca__copy.copied { background: var(--orange); color: var(--yellow); }
+
+  /* ============ FOOTER ============ */
+  footer {
+    padding: 50px 0 40px;
+    background: var(--ink);
+    color: var(--yellow);
+    border-top: 3px solid var(--ink);
+  }
+  .foot {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 20px;
+    align-items: center;
+    text-align: center;
+  }
+  @media (max-width: 760px) {
+    .foot { grid-template-columns: 1fr; }
+  }
+  .foot__brand {
+    text-align: left;
+    font-family: var(--f-display);
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  @media (max-width: 760px) { .foot__brand { justify-content: center; } }
+  .foot__brand img {
+    width: 38px; height: 38px;
+    border: 2px solid var(--yellow);
+    border-radius: 50%;
+  }
+  .foot__center {
+    font-family: var(--f-display);
+    font-size: 1rem;
+    letter-spacing: .04em;
+    color: var(--orange-soft);
+  }
+  .foot__links {
+    justify-self: end;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  @media (max-width: 760px) { .foot__links { justify-self: center; } }
+  .foot__links a {
+    padding: 10px 16px;
+    border: 2px solid var(--yellow);
+    border-radius: 999px;
+    font-family: var(--f-display);
+    font-size: .78rem;
+    letter-spacing: .1em;
+    transition: background .15s, color .15s;
+  }
+  .foot__links a:hover { background: var(--yellow); color: var(--ink); }
+
+  .foot__small {
+    margin-top: 34px;
+    text-align: center;
+    font-size: .78rem;
+    opacity: .55;
+    max-width: 640px;
+    margin-inline: auto;
+  }
+
+  /* ============ REVEAL ============ */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity .7s ease, transform .7s cubic-bezier(.2,.8,.2,1);
+  }
+  .reveal.in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero__watcher img, .marquee__track, .hero__kicker::before { animation: none !important; }
+    .reveal { opacity: 1; transform: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="nav">
+  <div class="wrap nav__inner">
+    <a class="nav__brand" href="#top">
+      <img src="./assets/pipi-portrait.png" alt="" />
+      <span>$PIPI</span>
+    </a>
+    <nav class="nav__links">
+      <a href="#painting">The Look</a>
+      <a href="#lore">Lore</a>
+      <a href="#buy">How to buy</a>
+    </nav>
+    <div class="nav__actions">
+      <a class="nav__cta nav__cta--ghost" href="#" target="_blank" rel="noopener" aria-label="Community on X">
+        <svg viewBox="0 0 24 24" aria-hidden="true" width="14" height="14"><path fill="currentColor" d="M18.244 2H21.5l-7.5 8.575L22.5 22h-6.8l-5.34-6.8L4.5 22H1.244l8.02-9.168L1.244 2H8.2l4.84 6.35L18.244 2Zm-2.38 18h1.79L7.3 4H5.4l10.464 16Z"/></svg>
+        <span>Community</span>
+      </a>
+      <a class="nav__cta" href="#buy">Buy $PIPI</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="hero__watcher" aria-hidden="true">
+    <img src="./assets/pipi-hero.png" alt="" />
+  </div>
+  <div class="hero__inner">
+    <span class="hero__kicker">$PIPI · PINK PEPE'S GIRLFRIEND</span>
+    <h1 class="hero__title">PINK<br/>PIPI</h1>
+    <p class="hero__tagline">The feminine Pepe energy the timeline was clearly waiting for.</p>
+    <div class="hero__meta">
+      <span>Pink frog girl era</span>
+      <span>Bows, blush, bags</span>
+      <span>Meme couture, 2026</span>
+    </div>
+    <div class="hero__cta">
+      <a class="btn btn--primary" href="#buy">Buy $PIPI</a>
+      <a class="btn btn--ghost" href="#painting">See the look</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MARQUEE ============ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <span>PINK PEPE'S GIRLFRIEND</span><span>$PIPI</span><span>BOWS ON CHAIN</span><span>BLUSHED AND BASED</span><span>LIPSTICK LIQUIDITY</span><span>GIRLFRIEND META</span>
+    <span>PINK PEPE'S GIRLFRIEND</span><span>$PIPI</span><span>BOWS ON CHAIN</span><span>BLUSHED AND BASED</span><span>LIPSTICK LIQUIDITY</span><span>GIRLFRIEND META</span>
+  </div>
+</div>
+
+<!-- ============ THE PAINTING ============ -->
+<section class="painting" id="painting">
+  <div class="wrap">
+    <div class="painting__head reveal">
+      <span class="section-kicker">THE LOOK</span>
+      <h2 class="section-title">Pepe went pink.<br/>The timeline got a <em>girlfriend</em>.</h2>
+    </div>
+
+    <div class="painting__grid">
+      <figure class="card reveal">
+        <div class="card__frame">
+          <img src="./assets/pipi-portrait.png" alt="Pink Pepe's Girlfriend portrait for $PIPI" />
+        </div>
+        <figcaption class="card__caption">
+          <strong>Pink Pepe's Girlfriend</strong>
+          <em>The main character</em>
+        </figcaption>
+      </figure>
+
+      <figure class="card reveal">
+        <div class="card__frame">
+          <img src="./assets/pipi-beauty-painter.png" alt="$PIPI pink frog girlfriend applying lipstick at a vanity mirror" />
+        </div>
+        <figcaption class="card__caption">
+          <strong>$PIPI Vanity</strong>
+          <em>Lipstick, lashes, liquidity</em>
+        </figcaption>
+      </figure>
+    </div>
+
+    <div class="painting__copy">
+      <div class="reveal">
+        <h2>Not just cute.<br/>Cute with conviction.</h2>
+      </div>
+      <div class="reveal">
+        <p>$PIPI is Pink Pepe's Girlfriend: glossy eyes, long lashes, bow on top, and a wallet full of main-character energy.</p>
+        <p>She is the feminine version of Pepe for a market that has seen every frog, dog, and hat. Pink, loud, playful, and impossible to ignore.</p>
+        <p>The look is simple: meme face, fashion mood, lipstick ready. Everything else is noise.</p>
+        <a class="ref-link" href="#buy">Get $PIPI ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LORE ============ -->
+<section class="lore" id="lore">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="section-kicker">THE LORE</span>
+      <h2 class="section-title">She saw Pepe.<br/>She chose <em>pink</em>.</h2>
+    </div>
+
+    <div class="lore__grid">
+      <div class="lore__text reveal">
+        <p>Every cycle gets its frog. This one gets the girlfriend: pink skin, bow, lashes, blush, and that calm little smile that says she already checked the chart.</p>
+        <p>$PIPI is not trying to be serious. That is the point. She is cute enough for stickers, loud enough for billboards, and chaotic enough for the group chat.</p>
+        <p>Pink Pepe's Girlfriend is for the people who like their memes sweet, their candles green, and their timeline dressed up for the pump.</p>
+        <p>No crown. No throne.<br/>Just lipstick, liquidity, and vibes.</p>
+      </div>
+
+      <aside class="lore__aside reveal">
+        <img src="./assets/pipi-beauty-painter.png" alt="Pink Pepe's Girlfriend applying lipstick in a vanity mirror" />
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALLERY MOMENT ============ -->
+<section class="gallery reveal">
+  <figure class="gallery__inner">
+    <img src="./assets/pipi-gallery.png" alt="Pink Pepe's Girlfriend looking at a boutique window with pink and blue dresses" />
+    <figcaption class="gallery__caption">
+      <span class="gallery__line">The girlfriend checks the dress window.</span>
+      <span class="gallery__label">$PIPI · Boutique window · Meme couture</span>
+    </figcaption>
+  </figure>
+</section>
+
+<!-- ============ BLESSING ============ -->
+<section class="blessing">
+  <div class="wrap blessing__inner">
+    <p class="blessing__quote">"Pink, cute, and built for the timeline."</p>
+    <p class="blessing__byline">A feminine Pepe-coded meme coin with bows, blush, and a whole lot of attitude.</p>
+  </div>
+</section>
+
+<!-- ============ HOW TO BUY ============ -->
+<section class="buy" id="buy">
+  <div class="wrap">
+    <div class="buy__head reveal">
+      <span class="section-kicker">HOW TO BUY</span>
+      <h2 class="section-title">Four steps.<br/>Stay pretty.</h2>
+    </div>
+
+    <ol class="steps">
+      <li class="reveal">
+        <div class="steps__num">01</div>
+        <div>
+          <div class="steps__title">Get a wallet</div>
+          <div class="steps__text">Phantom, MetaMask, Rabby. Pick your purse, write the seed phrase on paper, and keep it private.</div>
+        </div>
+      </li>
+      <li class="reveal">
+        <div class="steps__num">02</div>
+        <div>
+          <div class="steps__title">Fund it</div>
+          <div class="steps__text">Send some SOL / ETH to your wallet from any exchange. Leave a little extra for gas and gloss.</div>
+        </div>
+      </li>
+      <li class="reveal">
+        <div class="steps__num">03</div>
+        <div>
+          <div class="steps__title">Buy $PIPI</div>
+          <div class="steps__text">Open your favourite DEX, paste the contract address below, and swap. Pink candles only, allegedly.</div>
+        </div>
+      </li>
+      <li class="reveal">
+        <div class="steps__num">04</div>
+        <div>
+          <div class="steps__title">Join the closet</div>
+          <div class="steps__text">Post the memes, share the stickers, and let Pink Pepe's Girlfriend take over the feed.</div>
+        </div>
+      </li>
+    </ol>
+
+    <div class="ca reveal">
+      <span class="ca__label">CONTRACT</span>
+      <code class="ca__value" id="ca-value">TBA · pink contract dropping soon</code>
+      <button class="ca__copy" id="ca-copy" type="button">Copy</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap foot">
+    <div class="foot__brand">
+      <img src="./assets/pipi-portrait.png" alt="" />
+      <span>$PIPI · PINK PEPE'S GIRLFRIEND</span>
+    </div>
+    <div class="foot__center">Cute enough to trend. Pink enough to remember.</div>
+    <div class="foot__links">
+      <a href="#" target="_blank" rel="noopener">X</a>
+      <a href="#" target="_blank" rel="noopener">TELEGRAM</a>
+      <a href="#" target="_blank" rel="noopener">DEX</a>
+      <a href="#buy">BUY</a>
+    </div>
+  </div>
+  <p class="foot__small">
+    Pink Pepe's Girlfriend ($PIPI) is a community-driven meme token. This is not financial advice.
+    Pink candles are not guaranteed, but the bow is staying on.
+  </p>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.reveal, .card').forEach((el) => io.observe(el));
+
+  const copyBtn = document.getElementById('ca-copy');
+  const caValue = document.getElementById('ca-value');
+  copyBtn?.addEventListener('click', async () => {
+    const text = caValue?.textContent?.trim() || '';
+    try {
+      await navigator.clipboard.writeText(text);
+      copyBtn.textContent = 'Copied';
+      copyBtn.classList.add('copied');
+      setTimeout(() => {
+        copyBtn.textContent = 'Copy';
+        copyBtn.classList.remove('copied');
+      }, 1600);
+    } catch (err) {
+      copyBtn.textContent = 'Press Ctrl+C';
+      setTimeout(() => { copyBtn.textContent = 'Copy'; }, 1600);
+    }
+  });
+
+</script>
+
+</body>
+</html>
